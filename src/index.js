@@ -50,9 +50,9 @@ function App() {
   return (
     <div>
       <h1>Hello react</h1>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Header />
+      <Menu />
+      <Footer />
     </div>
   );
 }
@@ -64,6 +64,31 @@ function Pizza() {
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
     </div>
   );
+}
+
+function Header() {
+  return <h1>Fast React Pizza.Co </h1>;
+}
+function Menu() {
+  return (
+    <div>
+      <h2>Menu is here</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
+}
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closedHour = 22;
+  if (hour >= openHour && hour <= closedHour) {
+    alert("we're opened now");
+  } else {
+    alert("we are closed");
+  }
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
